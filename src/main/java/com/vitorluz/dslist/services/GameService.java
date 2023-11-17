@@ -1,7 +1,7 @@
 package com.vitorluz.dslist.services;
 
 import com.vitorluz.dslist.dto.GameDTO;
-import com.vitorluz.dslist.dto.GameMinDto;
+import com.vitorluz.dslist.dto.GameMinDTO;
 import com.vitorluz.dslist.entities.Game;
 import com.vitorluz.dslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +24,8 @@ public class GameService {
 
     }
     @Transactional(readOnly = true)
-    public List<GameMinDto> findAll(){
+    public List<GameMinDTO> findAll(){
          List<Game> result = gameRepository.findAll();
-         return result.stream().map(x-> new GameMinDto(x)).toList();
+         return result.stream().map(x-> new GameMinDTO(x)).toList();
     }
 }
